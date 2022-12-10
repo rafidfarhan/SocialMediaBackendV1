@@ -9,8 +9,12 @@ const morgan = require("morgan");
 const userRoute = require("./routes/users");
 const authRoute = require("./routes/auth");
 const postRoute = require("./routes/posts");
+const path = require("path"); 
 
 dotenv.config();
+
+//Set static folder
+app.use(express.static(path.join(__dirname, 'public')));
 
 mongoose.connect(process.env.MONGO_URL,{useNewUrlParser: true, useUnifiedTopology: true}, ()=>{
     console.log("Connected to MongoDB");
