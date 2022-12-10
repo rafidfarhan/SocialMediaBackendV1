@@ -24,6 +24,7 @@ app.use("/api/users", userRoute);
 app.use("/api/auth", authRoute);
 app.use("/api/posts", postRoute);
 
-app.listen(3001,()=>{
+const PORT = process.env.PORT || 3002
+app.listen(PORT,()=>{
     console.log("Server is running")
 })
